@@ -3,6 +3,8 @@
 
 Provides an intuitive menu for quickly changing checkbox styles in [Obsidian](https://obsidian.md)
 
+This fork retains ReticentEclectic's original plugin and license. Version 1.3.1 adds reading-view menus and fixes stale menu/overlay lifetimes. See [validation and known limits](VALIDATION.md).
+
 ![Style Change Demo](https://github.com/user-attachments/assets/99900dee-997c-443f-a554-283395572d46)
 
 ## Features
@@ -117,16 +119,16 @@ By default, clicking a checkbox toggles between unchecked (`[ ]`) and checked (`
 
 Clicking a checkbox now steps through your states in order, wrapping back to the first state after the last.
 
-**Note:** Like the rest of this plugin, the custom cycle only applies while editing (Live Preview / Source mode) - Reading view keeps the default toggle behavior regardless of this setting.
+**Note:** The custom cycle applies in Live Preview and Reading view. With the setting disabled, ordinary clicks keep Obsidian's native toggle behavior.
 
 **Tasks plugin users:** if a state you choose already means something else to the Tasks plugin (or another checkbox-aware plugin), double-check that your custom cycle doesn't conflict with it.
 
 ## Compatibility
 
-- **Obsidian Version**: Requires Obsidian 0.15.0 or later
+- **Obsidian Version**: Requires Obsidian 1.1.0 or later (reading-view writes use `Vault.process`)
 - **Platforms**: Desktop and Mobile
 - **Note Types**: Works with any note containing markdown checkboxes
-- **Live-Preview Only**: Does not work in *Reading view* or *Source mode*
+- **Views**: Long-press and right-click menus work in Live Preview and Reading view. Raw Source mode has no rendered checkbox targets. The cursor hotkey requires a Live Preview checkbox.
 - **Requires Compatible Theme:** Any theme that adds checkbox styles (e.g. [Minimal](https://github.com/kepano/obsidian-minimal) or [Things](https://github.com/colineckert/obsidian-things))
 
 ## Third-Party Plugin Compatibility
